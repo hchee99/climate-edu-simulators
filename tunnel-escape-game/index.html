@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지하차도 침수 탈출 게임</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚇 지하차도 침수 탈출</h1>
+    <p class="subtitle">물이 차오르기 전에 출구로! 막히면 손잡이를 잡아요 — 골든타임 안에 대피하세요</p>
+  </header>
+
+  <div class="hud">
+    <div class="stat"><span>골든타임</span><b id="timer">0:45</b></div>
+    <div class="stat"><span>점수</span><b id="score">0</b></div>
+    <div class="stat"><span>남은 거리</span><b id="dist">—</b></div>
+    <div id="status" class="status">▶ 시작을 눌러 대피를 시작하세요</div>
+  </div>
+
+  <canvas id="game" width="340" height="450"></canvas>
+
+  <div class="controls">
+    <button id="left"  aria-label="왼쪽">←</button>
+    <button id="up"    aria-label="앞으로">↑</button>
+    <button id="right" aria-label="오른쪽">→</button>
+    <button id="start" class="start">▶ 시작 / 다시</button>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw rail"></i> 파란 기둥 = 손잡이(안전)</span>
+    <span><i class="sw time"></i> 시간 +5초</span>
+    <span><i class="sw ladder"></i> 사다리 2칸↑</span>
+    <span><i class="sw tube"></i> 튜브 잠시 보호</span>
+  </div>
+
+  <footer>
+    <p>💡 실제 행동요령: 물이 무릎까지 오면 차를 버리고 즉시 대피! 벽·난간을 잡고 출구 쪽으로 나가세요.</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>

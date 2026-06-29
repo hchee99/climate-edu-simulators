@@ -1,0 +1,104 @@
+/* =========================================================
+   지하차도 침수 탈출 게임 — 스타일
+   ========================================================= */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Pretendard", -apple-system, "Segoe UI", sans-serif;
+  background: #f4f7fb;
+  color: #1a2330;
+  text-align: center;
+}
+
+header { padding: 22px 20px 8px; }
+header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+.subtitle { margin: 6px 0 0; color: #5a6675; font-size: 14px; }
+
+.hud {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0 12px;
+}
+.stat { display: flex; flex-direction: column; }
+.stat span { font-size: 12px; color: #5a6675; }
+.stat b { font-size: 22px; font-weight: 500; color: #3478dc; }
+.status {
+  font-size: 14px;
+  color: #5a6675;
+  background: #fff;
+  border: 1px solid #e3e9f0;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #21303f;
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.controls button {
+  width: 64px;
+  height: 50px;
+  font-size: 20px;
+  border: 1px solid #d6dee8;
+  background: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.controls button:active { transform: scale(0.96); }
+.controls .start {
+  width: auto;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #3478dc;
+  border: none;
+}
+
+.legend {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #5a6675;
+}
+.legend i.sw {
+  display: inline-block;
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  vertical-align: -1px;
+  margin-right: 3px;
+}
+.sw.rail   { background: #3aa0e0; }
+.sw.time   { background: #e0a93a; }
+.sw.ladder { background: #5dc99a; }
+.sw.tube   { background: #d46a8a; }
+
+footer {
+  margin: 18px auto 30px;
+  max-width: 480px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #6b7787;
+  background: #fff;
+  border: 1px solid #e3e9f0;
+  border-radius: 10px;
+}
+footer p { margin: 0; line-height: 1.6; }
