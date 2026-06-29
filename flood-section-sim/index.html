@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도시 단면도 침수 시뮬레이터</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏙️ 도시 단면도 침수 시뮬레이터</h1>
+    <p class="subtitle">같은 비도 땅에 따라 다르게 잠겨요 — 옆에서 단면을 보며 확인해 보세요</p>
+  </header>
+
+  <main>
+    <!-- 좌측: 조작 패널 -->
+    <section class="panel" aria-label="조작 패널">
+      <div class="control">
+        <label>땅 선택</label>
+        <div class="terrain-buttons" role="group">
+          <button class="terrain active" data-terrain="city">🏙️ 도시</button>
+          <button class="terrain" data-terrain="plain">🌾 평지</button>
+          <button class="terrain" data-terrain="forest">🌲 산림</button>
+        </div>
+        <p class="hint" id="terrainHint">아스팔트라 물이 거의 안 스며들어요. (흡수율 10%)</p>
+      </div>
+
+      <div class="control">
+        <label for="rain">강수강도 <span id="rainValue">50 mm/h</span></label>
+        <input type="range" id="rain" min="10" max="150" step="5" value="50" />
+        <div class="ticks"><span>약한 비</span><span>집중호우</span></div>
+      </div>
+
+      <div class="control derived">
+        <div class="stat"><span>물이 차는 속도</span><strong id="netRate">—</strong></div>
+        <div class="stat"><span>현재 물 높이</span><strong id="waterLevel">0 cm</strong></div>
+        <div class="stat"><span>침수 위험</span><strong id="riskLabel" class="risk">—</strong></div>
+      </div>
+
+      <div class="btn-row">
+        <button id="startBtn" class="run">▶ 비 내리기</button>
+        <button id="resetBtn" class="ghost">↺ 초기화</button>
+      </div>
+      <p class="hint" id="presetHint">💡 2022년 강남 침수는 시간당 141mm였어요. 슬라이더를 끝까지 올려보세요.</p>
+    </section>
+
+    <!-- 우측: 단면도 -->
+    <section class="viz" aria-label="단면도">
+      <div id="sceneHolder"></div>
+      <p id="summary" class="summary">땅을 고르고 <b>비 내리기</b>를 눌러보세요.</p>
+    </section>
+  </main>
+
+  <script src="model.js"></script>
+  <script src="sketch.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

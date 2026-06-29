@@ -1,0 +1,108 @@
+/* =========================================================
+   style.css — 도시 단면도 시뮬레이터 스타일
+   (climate-simulator와 톤을 맞춤)
+   ========================================================= */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Pretendard", -apple-system, "Segoe UI", sans-serif;
+  background: #f4f7fb;
+  color: #1a2330;
+}
+
+header { padding: 24px 28px 12px; }
+header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+.subtitle { margin: 6px 0 0; color: #5a6675; font-size: 14px; }
+
+main {
+  display: flex;
+  gap: 24px;
+  padding: 16px 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.panel {
+  flex: 0 0 300px;
+  background: #fff;
+  border: 1px solid #e3e9f0;
+  border-radius: 14px;
+  padding: 20px;
+}
+.control { margin-bottom: 22px; }
+.control > label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#rainValue { font-weight: 400; color: #3478dc; }
+input[type="range"] { width: 100%; accent-color: #3478dc; }
+.ticks { display: flex; justify-content: space-between; font-size: 11px; color: #8a96a5; margin-top: 4px; }
+
+.hint { font-size: 12px; color: #6b7787; margin: 8px 0 0; line-height: 1.5; }
+
+.terrain-buttons { display: flex; gap: 8px; }
+.terrain {
+  flex: 1;
+  padding: 10px 4px;
+  font-size: 13px;
+  border: 1px solid #d6dee8;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.terrain.active { border-color: #3478dc; background: #eaf2fd; font-weight: 600; }
+
+.derived { border-top: 1px solid #eef2f6; padding-top: 16px; }
+.stat { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px; }
+.stat span { color: #5a6675; }
+.stat strong { font-size: 15px; }
+
+.risk.safe    { color: #2e9e5b; }
+.risk.caution { color: #c79a1e; }
+.risk.danger  { color: #d9722b; }
+.risk.flood   { color: #d23b3b; }
+
+.btn-row { display: flex; gap: 8px; }
+.run {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #3478dc;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.run:hover { background: #2a66c0; }
+.ghost {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #5a6675;
+  background: #fff;
+  border: 1px solid #d6dee8;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.viz {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  border: 1px solid #e3e9f0;
+  border-radius: 14px;
+  padding: 20px;
+}
+#sceneHolder canvas { border-radius: 8px; display: block; }
+
+.summary {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px 14px;
+  background: #f4f7fb;
+  border-radius: 10px;
+}
