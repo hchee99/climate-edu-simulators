@@ -90,6 +90,8 @@ canvas {
 .sw.time   { background: #e0a93a; }
 .sw.ladder { background: #5dc99a; }
 .sw.tube   { background: #d46a8a; }
+.sw.car    { background: #454c57; }
+.sw.branch { background: #7a5230; }
 
 footer {
   margin: 18px auto 30px;
