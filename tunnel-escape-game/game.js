@@ -26,7 +26,7 @@
 
   // ---- 게임 초기화 ----
   function reset() {
-    player = { col: 2, row: WROWS - 1 };
+    player = { col: 2, row: WROWS - 1 };   // 맨 아래에서 시작
     items = [];
     const types = ["ladder", "tube"];
     let placed = 0, tries = 0;
@@ -170,8 +170,7 @@
       if (b.x > 3) { b.x = 3; b.dir = -1; }
     });
     checkBranch();
-    // 맨 아래에서 완전히 잠기면 실패
-    if (submerged() && playerWorldY() >= WORLDH - CH && !hasTube()) lose();
+    // 물에 잠겨도 게임은 안 끝남 — 실패는 골든타임 초과(위 timeLeft 체크)로만
   }
 
   // ---- 그리기 ----
